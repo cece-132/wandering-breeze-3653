@@ -1,0 +1,11 @@
+<%= form_with url: path, method: method, local: true do |f| %>
+  <%= f.select :contestant_id, Contestant.ids %> <br>
+  <%= f.text_field :contestant_id %>
+<br>
+<br>
+  <%= f.label :contestant_id, "Contestant ID" %> <br>
+  <%= f.text_field :contestant_id %>
+  <%=  f.submit button_text %>
+<br>
+<br>
+<% end %>
