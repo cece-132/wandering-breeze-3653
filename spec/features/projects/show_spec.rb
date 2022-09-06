@@ -59,6 +59,7 @@ RSpec.describe Project do
       end
     end
   end
+  
 end
 
 # recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
