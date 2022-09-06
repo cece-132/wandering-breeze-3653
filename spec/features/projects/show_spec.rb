@@ -76,8 +76,17 @@ RSpec.describe Project do
 
       visit project_path(news_chic)
 
+      within "#project-#{news_chic.id}" do
+        expect(page).to have_content("Number of Contestants: 2")
+      end
+
       within ".add_contestant" do
-        fill_in
+        select kentaro.id, from: :contestant_id
+        click_on "Add Contestant"
+      end
+
+      within "#project-#{news_chic.id}" do
+        expect(page).to have_content("Number of Contestants: 3")
       end
     end
   end

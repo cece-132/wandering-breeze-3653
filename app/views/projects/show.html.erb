@@ -1,10 +1,18 @@
 <div id="project-<%=@project.id%>">
-  Material: <%= @project.material %>
-  Challenge Theme: <%= @project.challenge.theme %>
-  Number of Contestants: <%= @project.contestant_count %>
-  Average Contestant Experience: <%= number_with_precision(@avg_experience, precision: 2)%> years
+  Material: <%= @project.material %> <br>
+  Challenge Theme: <%= @project.challenge.theme %> <br>
+  Number of Contestants: <%= @project.contestant_count %> <br>
+  Average Contestant Experience: <%= number_with_precision(@avg_experience, precision: 2)%> years <br>
 </div>
-
+<br>
+<br>
+<br>
+<h4> Add a Contestant </h4>
 <div class="add_contestant">
-  <%= render partial: 'student', locals: { path: "/teachers/#{@teacher.id}/students", method: :post, button_text: 'Submit' } %>
+  <%= form_with url: contestant_projects_path(@project), method: :post, local: true do |f| %>
+    <%= f.select :contestant_id, Contestant.ids %> <br>
+    <%= f.submit "Add Contestant" %>
+  <br>
+  <br>
+  <% end %>
 </div>
