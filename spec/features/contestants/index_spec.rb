@@ -18,7 +18,7 @@ RSpec.describe Contestant do
       within ".contestants" do
         within "#contestant-#{jay.id}" do
           expect(page).to have_content("Name: #{jay.name}")
-          expect(page).to have_content("Projects: #{jay.project.name}")
+          expect(page).to have_content("Projects: News Chic")
         end
       end
 
