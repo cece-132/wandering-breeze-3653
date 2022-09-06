@@ -28,7 +28,7 @@ RSpec.describe Project, type: :model do
         ContestantProject.create(contestant_id: gretchen.id, project_id: news_chic.id)
         ContestantProject.create(contestant_id: kentaro.id, project_id: news_chic.id)
 
-        
+        expect(news_chic.contestant_count).to eq 3
       end
     end
   end
